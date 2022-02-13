@@ -17,10 +17,20 @@ class ViewController: UIViewController {
         msgLabel.text = "You are"    }
 
     @IBAction func msgButtonPressed(_ sender: UIButton) {
-        msgLabel.text = "You are awsome!"
-        msgLabel.textColor = UIColor.red
-        msgLabel.textAlignment = .left
-        imageView1.image = UIImage(named: "image0")
+        
+       
+        if msgLabel.text == "You are awsome!"{
+            msgLabel.text = "You are Great!"
+            msgLabel.textColor = UIColor.red
+            msgLabel.textAlignment = .left
+            imageView1.image = UIImage(named: "image0")
+        } else {
+            msgLabel.text = "You are awsome!"
+            msgLabel.textColor = UIColor.blue
+            msgLabel.textAlignment = .left
+            imageView1.image = UIImage(named: "image3")
+        }
+        
         
         
     }
