@@ -12,24 +12,34 @@ class ViewController: UIViewController {
     @IBOutlet weak var msgLabel: UILabel!
     
     @IBOutlet weak var imageView1: UIImageView!
+    
+    var imageNumber = 0
     override func viewDidLoad() {
         super.viewDidLoad()
         msgLabel.text = "You are"    }
 
     @IBAction func msgButtonPressed(_ sender: UIButton) {
-        
-       
-        if msgLabel.text == "You are awsome!"{
-            msgLabel.text = "You are Great!"
-            msgLabel.textColor = UIColor.red
-            msgLabel.textAlignment = .left
-            imageView1.image = UIImage(named: "image0")
-        } else {
-            msgLabel.text = "You are awsome!"
-            msgLabel.textColor = UIColor.blue
-            msgLabel.textAlignment = .left
-            imageView1.image = UIImage(named: "image3")
+        print (imageNumber)
+        //let imageName = "image" + String(imageNumber) //This line and next convert int to string
+        let imageName = "image\(imageNumber)"
+        imageView1.image = UIImage(named: imageName)
+        imageNumber = imageNumber + 1
+        if imageNumber == 10{
+            imageNumber = 0
         }
+        
+            //        if msgLabel.text == "You are awsome!"{
+            //            msgLabel.text = "You are Great!"
+            //            msgLabel.textColor = UIColor.red
+            //            msgLabel.textAlignment = .left
+            //            imageView1.image = UIImage(named: "image0")
+            //        } else {
+            //            msgLabel.text = "You are awsome!"
+            //            msgLabel.textColor = UIColor.blue
+            //            msgLabel.textAlignment = .left
+            //            imageView1.image = UIImage(named: "image3")
+            //        }
+        
         
         
         
