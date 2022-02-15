@@ -34,8 +34,14 @@ class ViewController: UIViewController {
         }
         msgLabel.text = newMessage
         
+        var newImage = UIImage(named: "image\(Int.random(in: 0...totalNumberOfImages))")
         
-        imageView1.image = UIImage(named: "image\(Int.random(in: 0...totalNumberOfImages))")
+        while newImage == imageView1.image{
+            print("*** We had a repeating image")
+            newImage = UIImage(named: "image\(Int.random(in: 0...totalNumberOfImages))")
+        }
+                
+        imageView1.image = newImage
         
         
 //        print (imageNumber)
