@@ -15,6 +15,8 @@ class ViewController: UIViewController {
     
     var imageNumber = 0
     var messageNumber = 0
+    var totalNumberOfImages = 10
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         msgLabel.text = "You are"    }
@@ -24,20 +26,32 @@ class ViewController: UIViewController {
                          "You are great",
                          "You are fantastic",
                          "Fabulous? that's you"]
-        print (imageNumber)
-        //let imageName = "image" + String(imageNumber) //This line and next convert int to string
-        let imageName = "image\(imageNumber)"
-        imageView1.image = UIImage(named: imageName)
-        imageNumber = imageNumber + 1
-        if imageNumber == 10{
-            imageNumber = 0
-        }
         
-        msgLabel.text = messages[messageNumber]
-        messageNumber += 1
-        if messageNumber > messages.count - 1 {
-            messageNumber = 0
+        var newMessage = messages[Int.random(in: 0...messages.count-1)]
+        while newMessage == msgLabel.text{
+            print("*** We had a repeating value")
+            newMessage = messages[Int.random(in: 0...messages.count-1)]
         }
+        msgLabel.text = newMessage
+        
+        
+        imageView1.image = UIImage(named: "image\(Int.random(in: 0...totalNumberOfImages))")
+        
+        
+//        print (imageNumber)
+//        //let imageName = "image" + String(imageNumber) //This line and next convert int to string
+//        let imageName = "image\(imageNumber)"
+//        imageView1.image = UIImage(named: imageName)
+//        imageNumber = imageNumber + 1
+//        if imageNumber == 10{
+//            imageNumber = 0
+//        }
+//
+//        msgLabel.text = messages[messageNumber]
+//        messageNumber += 1
+//        if messageNumber > messages.count - 1 {
+//            messageNumber = 0
+//        }
         
             //        if msgLabel.text == "You are awsome!"{
             //            msgLabel.text = "You are Great!"
